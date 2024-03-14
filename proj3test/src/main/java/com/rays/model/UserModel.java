@@ -60,8 +60,9 @@ public List  search(UserDTO dto,int pageNo, int pageSize ) {
 	  if(dto!=null) {
 		  if(dto.getName()!=null&&dto.getName().length()>0) {
 			  criteria.add(Restrictions.like("name",dto.getName() + "%"));
-			  
-			  
+			   }
+		  if(dto.getDob()!=null&&dto.getDob().getTime()>0) {
+			  criteria.add(Restrictions.eq("dob", dto.getDob()));
 		  }
 		  
 	  }
@@ -78,7 +79,7 @@ public List  search(UserDTO dto,int pageNo, int pageSize ) {
 	  return list;
 	}
 
-public UserDTO authenticate(String login,String password) {
+     public UserDTO authenticate(String login,String password) {
 	SessionFactory sf=new Configuration().configure().buildSessionFactory();
 	 Session session=sf.openSession();
 	  

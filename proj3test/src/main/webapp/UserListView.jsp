@@ -31,7 +31,7 @@
 			<%
 				}
 			%>
-			<table border="1" width="100%" align="center">
+			<table border="1" width="100%">
 				<tr style="background: orange">
 					<th>SelectAll</th>
 					<th>S.No.</th>
